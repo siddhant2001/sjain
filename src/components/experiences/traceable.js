@@ -1,7 +1,7 @@
 const traceable = {
     title: "Software Engineer",
     company: "Traceable",
-    period: "2024 - Present",
+    period: "July 2024 - Present",
     description: "Part of the platform team."
   };
   

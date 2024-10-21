@@ -1,41 +1,81 @@
 .experience {
-    padding: 50px;
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  .experience h2 {
-    margin-bottom: 20px;
-  }
-  
-  .experience-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .experience-item {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px 0;
-    width: 60%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .experience-item h3 {
-    margin: 0;
-    font-size: 22px;
-  }
-  
-  .experience-item h4 {
-    margin: 5px 0;
-    font-size: 18px;
-    color: #666;
-  }
-  
-  .experience-item p {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
+  padding: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.experience h2 {
+  margin-bottom: 20px;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.experience-item {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  width: 60%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.experience-item h4 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.experience-item p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Older experiences section */
+.older-experiences-header {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #333;
+}
+
+.older-experience-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.older-experience-item {
+  background-color: #eaeaea;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px 0;
+  width: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.older-experience-item h4 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.older-experience-item p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
