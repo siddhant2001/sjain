@@ -1,0 +1,20 @@
+.publications {
+    padding: 50px;
+    background-color: #eaeaea;
+    text-align: center;
+  }
+  
+  .publications h2 {
+    margin-bottom: 20px;
+  }
+  
+  .publications ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .publications li {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
