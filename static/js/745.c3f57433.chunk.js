@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksjain=self.webpackChunksjain||[]).push([[745],{745:(s,e,a)=>{s.exports=a.p+"static/media/my-first-post.4e02333754216013b41a.md"}}]);
