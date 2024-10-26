@@ -1,81 +1,196 @@
+/* Experience Section */
 .experience {
-  padding: 50px;
-  background-color: #fff;
+  padding: 50px 20px;
+  background-color: #fdfdfd; /* Keep your existing background color */
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
+
+  /* Add this background image for the diagonal lines */
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(224, 195, 252, 0.2) 0px,
+    rgba(224, 195, 252, 0.2) 2px,
+    transparent 3px,
+    transparent 30px
+  );
+
 }
 
-.experience h2 {
+/* Timeline */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 800px;
+}
+
+/* Timeline Line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #e0c3fc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* Content */
+.timeline-content {
+  background-color: #fff;
+  position: relative;
+  border-radius: 6px;
+  padding: 20px;
+  width: 45%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Left Side (Even Items) */
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+}
+
+/* Circle at each node */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background-color: #e0c3fc;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::before {
+  right: calc(50% - 8px);
+}
+
+.timeline-item:nth-child(even)::before {
+  left: calc(50% - 8px);
+}
+
+/* Connector lines */
+.timeline-item:nth-child(odd)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  right: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: #e0c3fc;
+}
+
+.timeline-item:nth-child(even)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+  background-color: #e0c3fc;
+}
+
+/* Hover Effects */
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Experience Titles */
+.timeline-content h3,
+.timeline-content h4 {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+}
+
+.timeline-content .period {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Older Experiences */
+.older-experiences {
+  margin-top: 60px;
+}
+
+.older-experiences h3 {
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #333;
   margin-bottom: 20px;
 }
 
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  width: 60%;
-  margin: 0 auto;
+.timeline-item.older .timeline-content {
+  background-color: #fafafa;
 }
 
-.experience-item {
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px 0;
-  width: 60%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  /* Timeline Line */
+  .timeline::after {
+    left: 28px; /* Position the timeline line under the nodes */
+    transform: none; /* Remove any transforms */
+  }
 
-.experience-item h3 {
-  margin: 0;
-  font-size: 22px;
-}
+  /* Timeline Items */
+  .timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
 
-.experience-item h4 {
-  margin: 5px 0;
-  font-size: 18px;
-  color: #666;
-}
+  /* Timeline Content */
+  .timeline-item .timeline-content {
+    margin-left: 60px; /* Adjust spacing to accommodate the node */
+    width: calc(100% - 80px); /* Adjust width accordingly */
+    text-align: left;
+  }
 
-.experience-item p {
-  margin: 5px 0;
-  font-size: 16px;
-}
+  /* Timeline Nodes */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 20px; /* Adjust vertical alignment */
+    left: 20px; /* Align with the timeline line */
+    width: 16px;
+    height: 16px;
+    background-color: #e0c3fc;
+    border-radius: 50%;
+    z-index: 1;
+  }
 
-/* Older experiences section */
-.older-experiences-header {
-  margin-top: 40px;
-  font-size: 20px;
-  color: #333;
-}
+  /* Override desktop positioning */
+  .timeline-item:nth-child(odd)::before,
+  .timeline-item:nth-child(even)::before {
+    left: 20px;
+    right: auto; /* Reset the right property */
+  }
 
-.older-experience-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  width: 50%;
-  margin: 0 auto;
-}
-
-.older-experience-item {
-  background-color: #eaeaea;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 5px 0;
-  width: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.older-experience-item h4 {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-}
-
-.older-experience-item p {
-  margin: 5px 0;
-  font-size: 16px;
-  color: #555;
+  /* Hide connector lines */
+  .timeline-item::after {
+    display: none;
+  }
 }

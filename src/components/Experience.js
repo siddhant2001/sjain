@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Experience.css';
 
 // Import all experiences
@@ -10,36 +10,52 @@ import zinkhin from './experiences/zinkhin';
 import dreamvu from './experiences/dreamvu';
 import arcturus from './experiences/arcturus';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const currentExperiences = [traceable, dgraph, motorq, lotusdew];
 const olderExperiences = [zinkhin, dreamvu, arcturus];
 
 const Experience = () => {
-    return (
-        <section className="experience">
-          <h2>Experience</h2>
-          <div className="experience-list">
-            {currentExperiences.map((exp, index) => (
-              <div key={index} className="experience-item">
-                <h3>{exp.title}</h3>
-                <h4>{exp.company}</h4>
-                <p>{exp.period}</p>
-                <p>{exp.description}</p>
-              </div>
-            ))}
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+  
+
+  return (
+    <section className="experience">
+      <h2>Experience</h2>
+      <div className="timeline">
+        {currentExperiences.map((exp, index) => (
+          <div key={index} className="timeline-item" data-aos="fade-up">
+            <div className="timeline-content">
+              <h3>{exp.title}</h3>
+              <h4>{exp.company}</h4>
+              <p className="period">{exp.period}</p>
+              <p>{exp.description}</p>
+            </div>
           </div>
-          
-          <h3 className="older-experiences-header">Older Experiences</h3>
-          <div className="older-experience-list">
-            {olderExperiences.map((exp, index) => (
-              <div key={index} className="older-experience-item">
+        ))}
+
+        <div className="older-experiences">
+          {/* <h3>Older Experiences</h3> */}
+          {olderExperiences.map((exp, index) => (
+            <div key={index} className="timeline-item older" data-aos="fade-up">
+              <div className="timeline-content">
                 <h4>{exp.title}</h4>
                 <p>{exp.company}</p>
               </div>
-            ))}
-          </div>
-        </section>
-      );
-    
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 
 export default Experience;

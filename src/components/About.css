@@ -24,6 +24,7 @@ html {
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(171, 122, 216, 0.5),
+    rgba(171, 122, 216, 0.3),
     rgba(171, 122, 216, 0.01)
   ),
   #fdfdfd;
@@ -37,27 +38,24 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  perspective: 100px;
 }
 
-/* Profile photo */
-.profile-photo {
+.profile-photo-container {
   width: 300px;
   height: 300px;
-  border-radius: 50%;
+  overflow: hidden;    /* Hides the overflow caused by scaling */
+  border-radius: 50%;  /* Makes the container circular */
+}
+
+/* Image styles */
+.profile-photo {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  transform-style: preserve-3d;
+  object-position: 50% 20%; /* Adjust to focus on your face */
+  transform-origin: center; /* Ensures scaling happens from the center */
 }
 
-/* Parallax effect is applied inline via style attribute in React */
-
-/* Hover effect on profile photo */
-.profile-photo:hover {
-  transform: rotateY(90deg) rotateX(5deg);
-}
 
 .name {
   font-family: 'Raleway', sans-serif;
@@ -98,14 +96,19 @@ html {
   color: #007bff;
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 600px) {
   .name {
     font-size: 2em;
   }
 
-  .profile-photo {
+  .profile-photo-container {
     width: 200px;
     height: 200px;
   }
+
+  .profile-photo {
+    transform: scale(1.8);
+    object-position: 50% 0%; /* Adjust to focus on your face */
+  }
+
 }

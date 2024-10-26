@@ -40,12 +40,17 @@ const About = () => {
   return (
     <section className="about">
       <div className="about-content" style={{ 'opacity' : textOpacity }}>
+      <div className="profile-photo-container">
         <img
           src="profile.jpg"
           alt="Siddhant Jain"
           className="profile-photo"
-          style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+          style={{
+            transform: `translateY(${offsetY * 0.1}px) scale(1.4)`,
+            transition: 'transform 0.6s ease',
+          }}
         />
+      </div>
         <h1>
           <span className="name">Siddhant Jain</span>
         </h1>
