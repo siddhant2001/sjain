@@ -46,10 +46,7 @@ const About = () => {
         </h1>
         <p className="title">Software Engineer</p>
         <p className="summary">
-          Software engineer with experience in platform development, database optimization, and cloud
-          technologies. Currently part of the platform team at Traceable. Previously interned at DGraph Labs,
-          Motorq, and LotusDew Wealth and Investment Advisors. Also experienced in hardware modeling and computer
-          vision through earlier internships.
+          I like to build things for the web. I'm a software engineer based in Namma Bengaluru, India. Currently working at <a href='https://traceable.ai'>Traceable</a>. BTech + MS in Computer Science from IIIT Hyderabad. Published author of 2 papers.
         </p>
         <div className="social-links">
           <a

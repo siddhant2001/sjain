@@ -28,6 +28,11 @@ html {
   color: white;
 }
 
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
 .App-link {
   color: #61dafb;
 }
