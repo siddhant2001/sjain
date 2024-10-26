@@ -1,6 +1,7 @@
+/* About.css */
+
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&family=Open+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&family=Open+Sans:wght@400;600&family=Raleway:wght@300;700&display=swap');
 
 /* Global styles */
 body {
@@ -9,42 +10,59 @@ body {
 }
 
 html {
-  /* Set default values for CSS variables */
-  --mouse-x: 50%;
-  --mouse-y: 50%;
   scroll-behavior: smooth;
 }
 
 /* About section */
 .about {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(171, 122, 216, 0.5),
-    rgba(171, 122, 216, 0.3),
-    rgba(171, 122, 216, 0.01)
-  ),
-  #fdfdfd;
-  background-repeat: no-repeat;
-  transition: background 1s ease;
+  overflow: hidden; /* Ensure background doesn't overflow */
 }
 
-/* About content */
+/* Dot Grid Background */
+.dot-grid {
+  position: absolute;
+  top: 0; /* Adjusted from -50% to 0 */
+  left: 0; /* Adjusted from -50% to 0 */
+  width: 100%; /* Adjusted from 200% to 100% */
+  height: 100%; /* Adjusted from 200% to 100% */
+  background-image: radial-gradient(circle, rgba(171, 122, 216, 0.45) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveBackground 2s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 40px;
+  }
+}
+
+/* Ensure about content is above the background */
 .about-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 1; /* Default opacity */
+  transition: opacity 0.6s ease;
 }
 
+/* Profile photo container */
 .profile-photo-container {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;    /* Hides the overflow caused by scaling */
-  border-radius: 50%;  /* Makes the container circular */
+  width: min(300px, 12vw); /* Responsive width */
+  height: min(300px, 12vw);
+  overflow: hidden;
+  border-radius: 50%; /* Makes the container circular */
 }
 
 /* Image styles */
@@ -56,27 +74,26 @@ html {
   transform-origin: center; /* Ensures scaling happens from the center */
 }
 
-
+/* Name */
 .name {
   font-family: 'Raleway', sans-serif;
-  font-size: 3em;
+  font-size: min(4em, 3vw); /* Responsive font size */
   font-weight: 700;
   color: #333;
-  margin: 2000;
 }
 
 /* Title */
 .title {
-  font-size: 1.5em;
+  font-size: min(1.5em, 2vw); /* Responsive font size */
   color: #555;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 /* Personal summary */
 .summary {
-  max-width: 600px;
-  margin: 20px auto;
-  font-size: 1.2em;
+  max-width: 65vw;
+  margin: 0px auto;
+  font-size: min(1.01vw, 1.5em);
   color: #555;
 }
 
@@ -96,6 +113,7 @@ html {
   color: #007bff;
 }
 
+/* Responsive adjustments */
 @media screen and (max-width: 600px) {
   .name {
     font-size: 2em;
@@ -110,5 +128,4 @@ html {
     transform: scale(1.8);
     object-position: 50% 0%; /* Adjust to focus on your face */
   }
-
 }

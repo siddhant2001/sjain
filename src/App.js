@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FloatingButton from './components/layout/FloatingButton';
 import Blog from './components/blog/Blog';
-
+import Education from './components/home/Education';
 function App() {
   
   return (
@@ -22,6 +22,7 @@ function App() {
               <div id="about"><About /></div>
               <div id="experience"><Experience /></div>
               <div id="publications"><Publications /></div>
+              <div id="education"><Education /></div>
             </>
           } />
           <Route path="/blog/*" element={<Blog />} />

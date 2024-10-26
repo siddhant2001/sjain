@@ -37,6 +37,7 @@ const Navbar = () => {
         <li><a href="#about" onClick={() => setIsMobile(false)}>About</a></li>
         <li><a href="#experience" onClick={() => setIsMobile(false)}>Experience</a></li>
         <li><a href="#publications" onClick={() => setIsMobile(false)}>Publications</a></li>
+        <li><a href="#education" onClick={() => setIsMobile(false)}>Education</a></li>
       </ul>
       <button
         className="mobile-menu-icon"

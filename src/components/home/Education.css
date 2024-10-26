@@ -1,0 +1,93 @@
+/* Education.css */
+
+/* Import fonts if needed */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+
+/* Education Section */
+.education {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+    /* background: repeating-linear-gradient(
+      45deg,
+      #fdfdfd,
+      #fdfdfd 10px,
+      #fdfdfd 20px,
+      #e4d0f87d 20px,
+      #e4d0f87d 30px
+    ); */
+  }
+    
+
+.education h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.education-list {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.education-item {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.degree {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.institution {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.dates {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .education-item {
+    padding: 20px;
+  }
+
+  .degree {
+    font-size: 20px;
+  }
+
+  .institution {
+    font-size: 16px;
+  }
+}

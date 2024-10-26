@@ -16,6 +16,13 @@
 
 }
 
+.experience h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
 /* Timeline */
 .timeline {
   position: relative;
