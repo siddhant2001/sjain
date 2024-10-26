@@ -87,6 +87,8 @@ html {
   font-size: min(1.5em, max(2vw, 1.1em)); /* Responsive font size */
   color: #555;
   margin-top: 5px;
+  /* Italics */
+  font-style: italic;
 }
 
 /* Personal summary */
