@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FloatingButton from './components/layout/FloatingButton';
 import Blog from './components/blog/Blog';
 import Education from './components/home/Education';
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
   
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path="/blog/*" element={<Blog />} />
       </Routes>
       <FloatingButton />
+      <Analytics />
       <Footer />
     </div>
     </Router>
