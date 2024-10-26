@@ -51,7 +51,7 @@ const About = () => {
         </h1>
         <p className="title">Software Engineer</p>
         <p className="summary">
-          Passionate software engineer with experience in full-stack development, specializing in React and Node.js.
+          Software engineer with experience in platform development, database optimization, and cloud technologies. Currently part of the platform team at Traceable. Previously interned at at DGraph Labs, Motorq, and LotusDew Wealth and Investment Advisors. Also experienced in hardware modeling and computer vision through earlier internships.
         </p>
         <div className="social-links">
           <a
