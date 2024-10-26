@@ -93,7 +93,7 @@ html {
 .summary {
   max-width: 65vw;
   margin: 0px auto;
-  font-size: min(1.01vw, 1.5em);
+  font-size: min(max(1.01vw, 1em), 1.5em);
   color: #555;
 }
 
