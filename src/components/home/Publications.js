@@ -19,8 +19,19 @@ const Publications = () => {
                 {pub.title}
               </a>
             </h3>
-            <p><strong>Year:</strong> {pub.year}</p>
-            <p>{pub.description}</p>
+            <p className="publication-details">
+              <span className="publication-authors">{pub.authors}</span>
+              <span className="publication-venue">{pub.venue}</span>
+              <span className="publication-year">{pub.year}</span>
+            </p>
+            <p className="publication-description">{pub.description}</p>
+            {pub.keywords && (
+              <p className="publication-keywords">
+                {pub.keywords.map((keyword, idx) => (
+                  <span key={idx} className="keyword">{keyword}</span>
+                ))}
+              </p>
+            )}
           </div>
         ))}
       </div>

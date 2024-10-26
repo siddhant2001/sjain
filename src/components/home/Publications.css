@@ -1,0 +1,112 @@
+/* Publications.css */
+
+.publications {
+  padding: 50px 20px;
+  background-color: #fdfdfd;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #e0c3fc, #8ec5fc, #e0c3fc);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.publications h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.publications-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.publication-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.publication-item h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.publication-item h3 a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.publication-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.publication-details {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.publication-authors,
+.publication-venue,
+.publication-year {
+  display: block;
+}
+
+.publication-venue {
+  font-style: italic;
+}
+
+.publication-description {
+  font-size: 16px;
+  color: #555;
+}
+
+.publication-keywords {
+  margin-top: 10px;
+}
+
+.keyword {
+  display: inline-block;
+  background-color: #e0c3fc;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-item {
+    padding: 15px;
+  }
+
+  .publication-item h3 {
+    font-size: 20px;
+  }
+}

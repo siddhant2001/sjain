@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #e0c3fc;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .floating-button:hover {
+    background-color: #d1b3f0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-icon {
+    font-size: 20px;
+  }
+  
+  .button-text {
+    margin-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  /* Hide text on small screens */
+  @media screen and (max-width: 600px) {
+    .floating-button {
+      padding: 15px 18px;
+      border-radius: 50%;
+    }
+  
+    .button-text {
+      display: none;
+    }
+  }
+  

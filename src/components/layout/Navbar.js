@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+
+  const location = useLocation();
+  const isBlogPage = location.pathname.startsWith('/blog');
+
   const [isMobile, setIsMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,10 +28,11 @@ const Navbar = () => {
     };
   }, []);
   
-
+  const logoText = !isBlogPage ? 'Siddhant Jain' : 'Siddhant\'s Blog'
+  const logoLink = !isBlogPage ? '/' : '/blog';
   return (
     <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-      <a href="#" className="nav-logo">Siddhant Jain</a>
+      <a href={logoLink} className="nav-logo">{logoText}</a>
       <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
         <li><a href="#about" onClick={() => setIsMobile(false)}>About</a></li>
         <li><a href="#experience" onClick={() => setIsMobile(false)}>Experience</a></li>
