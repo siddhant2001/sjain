@@ -1,21 +1,111 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  /* Set default values for CSS variables */
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  scroll-behavior: smooth;
+}
+
+/* About section */
 .about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(171, 122, 216, 0.5),
+    rgba(171, 122, 216, 0.01)
+  ),
+  #fdfdfd;
+  background-repeat: no-repeat;
+  transition: background 1s ease;
+}
+
+/* About content */
+.about-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 100px;
+}
+
+/* Profile photo */
+.profile-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* Parallax effect is applied inline via style attribute in React */
+
+/* Hover effect on profile photo */
+.profile-photo:hover {
+  transform: rotateY(90deg) rotateX(5deg);
+}
+
+.name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  color: #333;
+  margin: 2000;
+}
+
+/* Title */
+.title {
+  font-size: 1.5em;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Personal summary */
+.summary {
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Social links */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #333;
+  margin: 0 15px;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .name {
+    font-size: 2em;
   }
-  
-  .about-content {
-    text-align: center;
-  }
-  
+
   .profile-photo {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
+    width: 200px;
+    height: 200px;
   }
-  
+}

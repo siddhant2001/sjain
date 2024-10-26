@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Experience from './components/Experience';
 import Publications from './components/Publications';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (

@@ -1,30 +1,107 @@
+/* Navbar.css */
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-  }
-  
-  .nav-logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.navbar.scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  opacity: 0.9;
+}
+
+.nav-logo {
+  transition: all 0.3s ease;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar.scrolled .nav-logo {
+  font-size: 22px;
+}
+
+.nav-links {
+  transition: all 0.3s ease;
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a {
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.navbar.scrolled .nav-links a {
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.mobile-menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
   .nav-links {
-    list-style-type: none;
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    color: #333;
+  }
+
+  .nav-links-mobile {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
   }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
+
+  .nav-links-mobile li {
+    margin: 15px 0;
   }
-  
-  .nav-links li a:hover {
-    color: #bbb;
+
+  .nav-links-mobile a {
+    font-size: 20px;
   }
-  
+}
