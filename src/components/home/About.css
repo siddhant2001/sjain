@@ -117,7 +117,7 @@ html {
 @media screen and (max-width: 600px) {
 
   .about {
-    height: 80vh;
+    height: auto;
   }
   
 
@@ -128,10 +128,16 @@ html {
   .profile-photo-container {
     width: 200px;
     height: 200px;
+    margin-top: 20px;
   }
 
   .profile-photo {
     transform: scale(1.8);
     object-position: 50% 0%; /* Adjust to focus on your face */
+  }
+
+
+  .social-links {
+    margin-bottom: 20px;
   }
 }
