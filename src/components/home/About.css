@@ -84,7 +84,7 @@ html {
 
 /* Title */
 .title {
-  font-size: min(1.5em, 2vw); /* Responsive font size */
+  font-size: min(1.5em, max(2vw, 1.1em)); /* Responsive font size */
   color: #555;
   margin-top: 5px;
 }
@@ -115,6 +115,12 @@ html {
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
+
+  .about {
+    height: 80vh;
+  }
+  
+
   .name {
     font-size: 2em;
   }
